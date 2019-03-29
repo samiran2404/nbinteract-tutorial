@@ -13166,12 +13166,9 @@ div#notebook {
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="k">import</span> <span class="n">interact</span>
 <span class="kn">from</span> <span class="nn">pyzipcode</span> <span class="k">import</span> <span class="n">ZipCodeDatabase</span>
 <span class="n">zcdb</span> <span class="o">=</span> <span class="n">ZipCodeDatabase</span><span class="p">()</span>
-<span class="k">def</span> <span class="nf">get_zipcodes</span><span class="p">(</span><span class="n">zipcode</span><span class="p">,</span><span class="n">radius</span><span class="p">):</span>
-    <span class="k">try</span><span class="p">:</span>        
-       <span class="n">zipcodes</span> <span class="o">=</span> <span class="p">[</span><span class="n">z</span><span class="o">.</span><span class="n">zip</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">zcdb</span><span class="o">.</span><span class="n">get_zipcodes_around_radius</span><span class="p">(</span><span class="n">zipcode</span><span class="p">,</span><span class="n">radius</span><span class="p">)]</span>
-       <span class="nb">print</span><span class="p">(</span><span class="n">zipcodes</span><span class="p">)</span>
-    <span class="k">except</span> <span class="n">ZipNotFoundException</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_zipcodes</span><span class="p">(</span><span class="n">zipcode</span><span class="p">,</span><span class="n">radius</span><span class="p">):</span>    
+    <span class="n">zipcodes</span> <span class="o">=</span> <span class="p">[</span><span class="n">z</span><span class="o">.</span><span class="n">zip</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">zcdb</span><span class="o">.</span><span class="n">get_zipcodes_around_radius</span><span class="p">(</span><span class="n">zipcode</span><span class="p">,</span><span class="n">radius</span><span class="p">)]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">zipcodes</span><span class="p">)</span>
 
 <span class="n">interact</span><span class="p">(</span><span class="n">get_zipcodes</span><span class="p">,</span><span class="n">radius</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">zipcode</span><span class="o">=</span><span class="s1">&#39;10001&#39;</span><span class="p">)</span>
 </pre></div>
